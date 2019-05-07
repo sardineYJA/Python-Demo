@@ -174,10 +174,10 @@ class DFAFilter(object):
 if __name__ == "__main__":
     # gfw = NaiveFilter()
     # gfw = BSFilter()
-    gfw = DFAFilter()
-    gfw.parse("./data/sensitive_words.txt")
+    gfw = DFAFilter()# 过滤敏感词类
+    gfw.parse("./data/sensitive_words.txt")   # 加载敏感词文件（已默认设置，可以自定义加载敏感词）
     import time
     t = time.time()
-    print(gfw.filter("法轮功 我操操操", "*"))
+    print(gfw.filter("法轮功 我操操操", "*"))  # 运行敏感词检测替换函数
     print(gfw.filter("傻逼xxx"))
     print(time.time() - t)
